@@ -2,7 +2,7 @@
   "name": "mi-proyecto-prueba",
   "version": "1.0.0",
   "scripts": {
-  "test": "echo '¡Haciendo pruebas...' && exit 0"
+  "test": "echo '¡Haciendo pruebas...' && exit 1"
 },
   "dependencies": {
     "axios": "1.13.2"
