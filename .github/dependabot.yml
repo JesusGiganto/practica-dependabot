@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # Le decimos que mire package.json
+    directory: "/"           # Dónde está el archivo (en la raíz)
+    schedule:
+      interval: "daily"      # Que revise todos los días
