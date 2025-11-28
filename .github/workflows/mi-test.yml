@@ -1,0 +1,28 @@
+name: Mi Primer CI
+
+# ¿Cuándo se activa?
+on:
+  push:                 # Cuando tú haces push
+    branches: [ "main" ]
+  pull_request:         # Cuando alguien (o Dependabot) abre un PR
+    branches: [ "main" ]
+
+# ¿Qué tareas hace?
+jobs:
+  probar-codigo:
+    runs-on: ubuntu-latest  # GitHub nos presta una máquina virtual Linux gratis
+
+    steps:
+    - name: Descargar código
+      uses: actions/checkout@v4 # Esta es una acción oficial para bajar tu código a la máquina
+
+    - name: Instalar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Instalar dependencias
+      run: npm install
+
+    - name: Ejecutar pruebas
+      run: npm test  # Aquí ejecuta el script que modificamos en el Paso 1
